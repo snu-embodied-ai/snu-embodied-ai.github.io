@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 480" role="img" aria-labelledby="title desc">
+  <title id="title">서울대학교 AI연구원 체화AI연구센터</title>
+  <desc id="desc">사람과 인공지능의 상호작용, 신체를 통한 지능, 현실 세계를 연결하는 체화 인공지능 연구센터의 로고</desc>
+  <defs>
+    <linearGradient id="orbit" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#27B5AD"/>
+      <stop offset="1" stop-color="#167B91"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(48 48)">
+    <!-- Open orbital form: intelligence situated in the real world -->
+    <path d="M159 15a142 142 0 1 0 111 230" fill="none" stroke="#17324D" stroke-width="17" stroke-linecap="round"/>
+    <path d="M279 213a142 142 0 0 0-40-172" fill="none" stroke="url(#orbit)" stroke-width="17" stroke-linecap="round"/>
+    <!-- Human and embodied agent in reciprocal interaction -->
+    <circle cx="139" cy="92" r="24" fill="#EF806A"/>
+    <path d="M103 167c0-23 16-39 36-39s36 16 36 39v12h-72z" fill="#EF806A"/>
+    <circle cx="210" cy="122" r="20" fill="#1BA69F"/>
+    <path d="M181 184c0-20 13-34 29-34s29 14 29 34v10h-58z" fill="#1BA69F"/>
+    <!-- shared ground / world -->
+    <path d="M84 220c25 13 52 19 81 19 28 0 55-6 80-19" fill="none" stroke="#17324D" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="98" cy="215" r="7" fill="#17324D"/>
+    <circle cx="231" cy="215" r="7" fill="#17324D"/>
+    <!-- exchange signal -->
+    <path d="M166 109h17" stroke="#17324D" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="175" cy="109" r="5" fill="#17324D"/>
+  </g>
+  <g fill="#17324D" font-family="Pretendard, 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif">
+    <text x="380" y="205" font-size="61" font-weight="700" letter-spacing="-2">서울대학교 AI연구원</text>
+    <text x="380" y="292" font-size="76" font-weight="800" letter-spacing="-3">체화AI연구센터</text>
+    <text x="383" y="351" font-size="24" font-weight="500" letter-spacing="1.2" fill="#557085">EMBODIED ARTIFICIAL INTELLIGENCE RESEARCH CENTER</text>
+    <text x="383" y="386" font-size="19" font-weight="500" letter-spacing="1.1" fill="#7890A0">SEOUL NATIONAL UNIVERSITY ARTIFICIAL INTELLIGENCE INSTITUTE</text>
+  </g>
+</svg>

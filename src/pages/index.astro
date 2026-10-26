@@ -1,0 +1,76 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+const newsItems = (await getCollection('news')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 3);
+const publications = (await getCollection('publications')).sort((a, b) => b.data.year - a.data.year).slice(0, 5);
+const dateFormat = new Intl.DateTimeFormat('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+<BaseLayout>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-grid"></div>
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> SEOUL NATIONAL UNIVERSITY · AI INSTITUTE</p>
+        <h1>몸을 통해<br /><em>세상과 만나는</em><br />인공지능</h1>
+        <p class="hero-lead">현실 세계에서 인간과 소통하고 함께 행동하는<br class="desktop-only" /> 체화 인공지능의 가능성을 연구합니다.</p>
+        <a class="button button-light" href="#about">센터 알아보기 <span aria-hidden="true">↘</span></a>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="orbit orbit-outer"></div><div class="orbit orbit-inner"></div>
+        <div class="orbit-node node-a"></div><div class="orbit-node node-b"></div>
+        <div class="body-shape"><div class="body-head"></div><div class="body-torso"></div><div class="body-arm arm-left"></div><div class="body-arm arm-right"></div></div>
+        <div class="signal signal-one">perceive</div><div class="signal signal-two">interact</div><div class="signal signal-three">learn</div>
+        <div class="visual-caption"><span>EMBODIED AI</span><span>REAL WORLD · HUMAN INTERACTION</span></div>
+      </div>
+      <div class="hero-bottom"><span>RESEARCHING INTELLIGENCE IN THE PHYSICAL WORLD</span><a href="#about" aria-label="아래로 이동">↓</a><span>SEOUL · KOREA</span></div>
+    </section>
+
+    <section class="intro section-pad" id="about">
+      <div class="section-kicker"><span>01</span> ABOUT THE CENTER</div>
+      <div class="intro-layout">
+        <div><h2>지능은 몸을 얻고,<br /><span>현실과 연결됩니다.</span></h2></div>
+        <div class="intro-text"><p class="lead">서울대학교 AI연구원 체화AI연구센터는 신체를 가진 인공지능이 실세계에서 사람과 소통하고 행동할 수 있도록 연구합니다.</p><p>인공지능이 물리적 환경을 이해하고, 사람과 상호작용하며, 경험을 통해 배워가는 데 필요한 기반을 탐구합니다. 센터의 구체적인 연구 내용과 성과를 이곳에 소개할 예정입니다.</p><a class="text-link" href="#project">과제 소개 보기 <span>↗</span></a></div>
+      </div>
+      <div class="about-cards">
+        <article class="about-card greeting-card"><div class="card-top"><span class="card-index">A</span><span class="card-arrow">↗</span></div><div><p class="card-label">DIRECTOR'S MESSAGE</p><h3>센터장 인사말</h3><p class="card-note">센터장 인사말을 준비 중입니다.</p></div></article>
+        <article class="about-card project-card" id="project"><div class="card-top"><span class="card-index">B</span><span class="card-arrow">↗</span></div><div><p class="card-label">RESEARCH PROJECT</p><h3>과제 소개</h3><p class="project-title">실세계에서 인간과 소통하는<br />신체를 가진 인공지능 개발</p><p class="card-note">과학기술정보통신부 · 한국연구재단</p></div></article>
+        <article class="about-card history-card"><div class="card-top"><span class="card-index">C</span><span class="card-arrow">↗</span></div><div><p class="card-label">MILESTONES</p><h3>연혁</h3><p class="card-note">센터 설립 및 주요 연구 이력을 추가할 예정입니다.</p><div class="timeline-placeholder"><i></i><i></i><i></i></div></div></article>
+      </div>
+      <div class="official-title"><span>OFFICIAL PROJECT TITLE</span><p lang="en">Embodied Artificial Intelligence Interacting with Humans in Real World</p></div>
+    </section>
+
+    <section class="research section-pad" id="research">
+      <div class="section-kicker"><span>02</span> RESEARCH</div>
+      <div class="section-heading"><h2>연구주제</h2><p>센터의 세부 연구주제를 소개합니다.<br />연구 내용 확정 후 항목을 업데이트할 수 있습니다.</p></div>
+      <div class="research-grid">
+        <article class="research-item"><span class="research-number">01</span><div class="research-icon icon-world"><span></span><span></span><span></span></div><h3>실세계 상호작용</h3><p>현실 환경에서 사람과 소통하는 인공지능 연구</p><small>주제 설명을 추가해 주세요</small></article>
+        <article class="research-item"><span class="research-number">02</span><div class="research-icon icon-body"><span></span><span></span><span></span></div><h3>체화된 지능</h3><p>신체와 행동을 통해 환경을 이해하는 인공지능 연구</p><small>주제 설명을 추가해 주세요</small></article>
+        <article class="research-item"><span class="research-number">03</span><div class="research-icon icon-human"><span></span><span></span><span></span></div><h3>인간과의 소통</h3><p>사람의 의도와 맥락을 이해하고 협력하는 기술 연구</p><small>주제 설명을 추가해 주세요</small></article>
+      </div>
+      <p class="draft-note">※ 연구주제는 과제명과 센터 소개를 바탕으로 둔 편집용 초안입니다. 공식 연구방향에 맞춰 수정이 필요합니다.</p>
+    </section>
+
+    <section class="team section-pad" id="team">
+      <div class="team-copy"><div class="section-kicker"><span>03</span> PEOPLE</div><h2>함께 만드는<br /><span>새로운 지능</span></h2><p>센터를 이끄는 연구진과 참여 연구팀을 소개합니다.</p><p class="team-pending">연구팀 정보 준비 중</p></div>
+      <div class="team-panel"><div class="team-orbit"><span class="team-center">EAI</span><span class="team-dot dot-1"></span><span class="team-dot dot-2"></span><span class="team-dot dot-3"></span><span class="team-dot dot-4"></span><span class="team-dot dot-5"></span></div><div class="team-caption"><span>FACULTY</span><span>RESEARCHERS</span><span>STUDENTS</span></div><p>참여 연구진과 소속 연구팀 정보를 추가할 예정입니다.</p></div>
+    </section>
+
+    <section class="updates section-pad" id="news">
+      <div class="section-kicker"><span>04</span> UPDATES</div>
+      <div class="section-heading heading-row"><div><h2>블로그 및 소식</h2><p>센터의 연구와 활동 소식을 전합니다.</p></div><span class="soon-label">{newsItems.length ? 'LATEST' : 'COMING SOON'}</span></div>
+      {newsItems.length ? <div class="news-list">{newsItems.map((item) => <a class="news-row" href={`${base}news/${item.id}/`}><span class="news-category">{item.data.category}</span><span class="news-title">{item.data.title}<small>{item.data.summary}</small></span><time datetime={item.data.date.toISOString()}>{dateFormat.format(item.data.date)}</time><span class="news-arrow">↗</span></a>)}</div> : <div class="empty-state"><div class="empty-mark">✳</div><div><h3>첫 소식을 준비하고 있습니다.</h3><p>새로운 소식이 등록되면 이곳에서 확인할 수 있습니다.</p></div></div>}
+    </section>
+
+    <section class="publications section-pad" id="publications">
+      <div class="section-kicker"><span>05</span> PUBLICATIONS</div>
+      <div class="section-heading heading-row"><div><h2>Publications</h2><p>센터의 논문과 주요 연구 성과를 소개합니다.</p></div><span class="pub-count">{publications.length || '—'} <small>PUBLICATIONS</small></span></div>
+      {publications.length ? <div class="publication-list">{publications.map((paper) => <article class="publication-row"><span class="publication-year">{paper.data.year}</span><div><h3>{paper.data.title}</h3><p>{paper.data.authors}</p><small>{paper.data.venue}</small></div>{paper.data.link && <a class="publication-link" href={paper.data.link} target="_blank" rel="noreferrer" aria-label={`논문 링크: ${paper.data.title}`}>↗</a>}</article>)}</div> : <div class="pub-placeholder"><span class="pub-line"></span><p>등록된 논문이 없습니다.<br /><small>논문 목록과 링크를 추가하면 이 영역에 표시됩니다.</small></p></div>}
+    </section>
+
+    <section class="project-banner" aria-label="연구 과제">
+      <div class="banner-orb"></div><div><p>OUR MISSION</p><h2>Embodied AI<br />for the real world.</h2></div><div class="banner-detail"><span>SUPPORTED BY</span><strong>과학기술정보통신부<br />한국연구재단</strong><small>실세계에서 인간과 소통하는<br />신체를 가진 인공지능 개발</small></div>
+    </section>
+  </main>
+</BaseLayout>

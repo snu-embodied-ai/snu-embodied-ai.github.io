@@ -1,0 +1,17 @@
+{
+  "name": "snu-embodied-ai-center",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^7.3.0"
+  },
+  "allowScripts": {
+    "fsevents@2.3.3": true
+  }
+}

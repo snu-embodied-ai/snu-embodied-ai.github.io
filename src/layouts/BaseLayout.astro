@@ -1,0 +1,27 @@
+---
+import '../styles/global.css';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+const { title = '체화AI연구센터 | 서울대학교 AI연구원', description = '서울대학교 AI연구원 체화AI연구센터 — 실세계에서 인간과 소통하는 신체를 가진 인공지능 개발' } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#102a43" />
+    <meta name="description" content={description} />
+    <link rel="icon" href={`${base}assets/mark.svg`} type="image/svg+xml" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+    <SiteHeader />
+    <slot />
+    <SiteFooter />
+    <script>
+      import '../scripts/navigation.ts';
+    </script>
+  </body>
+</html>

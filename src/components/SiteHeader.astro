@@ -1,0 +1,12 @@
+---
+const base = import.meta.env.BASE_URL;
+---
+<header class="site-header">
+  <a class="brand" href={`${base}#top`} aria-label="서울대학교 AI연구원 체화AI연구센터 홈">
+    <img src={`${base}assets/logo.svg`} alt="서울대학교 AI연구원 체화AI연구센터" />
+  </a>
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="메뉴 열기"><span></span><span></span></button>
+  <nav id="primary-nav" class="primary-nav" aria-label="주요 메뉴">
+    <a href={`${base}#about`}>센터 소개</a><a href={`${base}#research`}>연구주제</a><a href={`${base}#team`}>연구팀</a><a href={`${base}#news`}>블로그·소식</a><a href={`${base}#publications`}>Publications</a>
+  </nav>
+</header>
